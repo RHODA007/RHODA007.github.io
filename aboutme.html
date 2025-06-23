@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e0f7ff; /* sky blue */
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .datetime {
+      font-size: 1rem;
+      background: #ffffff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .main {
+      display: flex;
+      align-items: flex-end;
+      flex-grow: 1;
+      margin-top: 20px;
+    }
+
+    .image-box {
+      width: 250px;
+      margin-right: 30px;
+    }
+
+    .image-box img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .content {
+      max-width: 600px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .content h1 {
+      margin-top: 0;
+      color: #0a74b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="datetime" id="datetime"></div>
+    </div>
+
+    <div class="main">
+      <div class="image-box">
+        <img src="images/me.JPG" alt="My Photo" />
+      </div>
+      <div class="content">
+        <h1>About Me</h1>
+        <p>I'm a full stack web developer with a passion for building dynamic and responsive websites.
+             I specialize in HTML, CSS, JavaScript, and modern frameworks. Let's build something great 
+             together!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+      };
+      document.getElementById('datetime').textContent = now.toLocaleString(undefined, options);
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+
+</body>
+</html>

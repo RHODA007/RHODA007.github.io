@@ -1,0 +1,146 @@
+<!-- looks.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lookbooks - Rhoda Style Lab</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: whitesmoke;
+    }
+    header, footer {
+      background-color: lime;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .lookbook-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+    .lookbook-entry {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .lookbook-entry:hover {
+      transform: scale(1.02);
+    }
+    .lookbook-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .lookbook-info {
+      padding: 15px;
+    }
+    .lookbook-info h3 {
+      margin: 0 0 10px;
+      color: #880e4f;
+    }
+    .lookbook-info p {
+      color: #555;
+      font-size: 14px;
+    }
+    footer{
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Rhoda's Lookbooks</h1>
+    <p>Get inspired by curated styles for every season and occasion</p>
+    <nav style=" margin-top: 50px; font-size: larger; font-weight: 800; font-family:Arial, Helvetica,
+     sans-serif;">
+      <a style="background-color: limegreen; color: #555;" href="home.html">← Back to Menu</a>
+    </nav>
+  </header>
+  <main class="lookbook-container">
+    <div class="lookbook-entry">
+      <img src="images/look1.jpeg" alt="Lookbook 1" class="lookbook-img" />
+      <div class="lookbook-info">
+        <h3>Summer Breeze</h3>
+        <p>Light fabrics and fresh tones. Discover outfits perfect for sunny days and beach vibes.</p>
+      </div>
+    </div>
+    <div class="lookbook-entry">
+      <img src="images/look2.jpeg" alt="Lookbook 2" class="lookbook-img" />
+      <div class="lookbook-info">
+        <h3>Urban Glam</h3>
+        <p>Chic looks for city life. Statement pieces and street style energy that turn heads.</p>
+      </div>
+    </div>
+    <div class="lookbook-entry">
+      <img src="images/look3.jpeg" alt="Lookbook 3" class="lookbook-img" />
+      <div class="lookbook-info">
+        <h3>Elegant Evenings</h3>
+        <p>Luxury and poise combined. Gowns, heels, and glam for unforgettable nights out.</p>
+      </div>
+    </div>
+  </main>
+   <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#Trends">Trends</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#style">Style Guides</a></li>
+        <li><a href="#news">Fashion News</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <p>Email: rhodavicky6@gmail.com</p>
+      <p>Phone: +234 815 518 456</p>
+      <p>Location: Edo, Nigeria</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>FAQs</h4>
+      <ul>
+        <li><a href="#">Shipping & Delivery</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Stay Connected</h4>
+      <p>Follow us on:</p>
+      <div class="social-icons">
+        <img src="images/logoinstagram.jpg" alt="Instagram" />
+        <img src="images/logofacebook.jpg" alt="Facebook" />
+        <img src="images/logotwitter.jpg" alt="Twitter" />
+        <img src="images/logo tiktok.jpg" alt="TikTok" />
+        <img src="images/logowhatsapp.jpg" alt="WhatsApp" />
+        <img src="images/logoyoutube.jpg" alt="YouTube" />
+      </div>
+      <p>Subscribe for updates:</p>
+      <input type="email" placeholder="Your email" class="subscribe-input">
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Rhoda's Style Lab. All rights reserved. | Designed with love by Rhoda's Team</p>
+  </div>
+</footer>
+
+</body>
+</html>

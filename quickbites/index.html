@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Bite - Flour Delights</title>
+  <link rel="stylesheet" href="style.css">
+<style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .testimonial-section {
+      background-color: #fff8f0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .testimonial-section h2 {
+      font-size: 2rem;
+      color: #b14c2e;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-carousel {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      height: auto;
+      min-height: 160px;
+    }
+
+    .testimonial {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      width: 100%;
+      font-style: italic;
+      background-color: #fff;
+      padding: 25px;
+      border-left: 5px solid #ff9966;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .testimonial.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    footer {
+      background-color: #30201b;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      max-width: 300px;
+      margin: 10px;
+    }
+
+    .footer-column h4 {
+      color: #f7c59f;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+      color: #f7c59f;
+      text-decoration: none;
+    }
+
+    .brand-text {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: #f7c59f;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Quick Bite</h1>
+    <nav>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="login.html">Sign in</a></li>
+         <li><a href="cart.html">Cart 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section class="custom-slider">
+  <div class="slider-wrapper">
+    <div class="slide active">
+      <img src="images/slider1.jpeg" alt="Meat Pie">
+      <div class="caption">Meat Pie - Savory and Rich</div>
+    </div>
+    <div class="slide">
+      <img src="images/slider2.png" alt="Donut">
+      <div class="caption">Donut - Sweet and Fluffy</div>
+    </div>
+    <div class="slide">
+      <img src="images/slider3.jpg" alt="Puff Puff">
+      <div class="caption">Puff Puff - Golden Perfection</div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+    <!-- Dot Indicators -->
+    <div class="slider-dots" id="dots-container"></div>
+  </div>
+</section>
+
+
+  <!-- Food List -->
+  <main>
+    <h2>Flour-Based Snacks</h2>
+    <div class="food-grid">
+      <div class="food-card">
+        <img src="images/slider1.jpeg" alt="Meat Pie">
+        <h3><a style="text-decoration: none;" href="meatpie.html">Meat Pie</a></h3>
+        <p>A savory pastry filled with minced meat and vegetables.</p>
+        <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+      </div>
+      <div class="food-card">
+        <img src="images/slider2.png" alt="Donut">
+         <h3><a style="text-decoration: none;" href="donut.html">Donut</a></h3>
+        <p>Deep-fried dough ring, often glazed or filled with jam.</p>
+        <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+      </div>
+      <div class="food-card">
+        <img src="images/puff puff.jpeg" alt="Puff Puff">
+         <h3><a style="text-decoration: none;" href="puff puff.html">Puff Puff</a></h3>
+        <p>Sweet fried dough balls, fluffy and addictive.</p>
+        <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+      </div>
+      <div class="food-card">
+        <img src="images/sausage.webp" alt="Sausage Roll">
+         <h3><a style="text-decoration: none;" href="sausageroll.html">Sausage Roll</a></h3>
+        <p>Pastry roll filled with seasoned sausage meat.</p>
+        <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+      </div>
+    </div>
+  </main>
+  <!-- Continue from the existing food-grid inside <main> -->
+<div class="food-grid">
+  <!-- Existing and previously added food cards -->
+ 
+  <div class="food-card">
+    <img src="images/cookies1.jpeg" alt="Cookies">
+     <h3><a style="text-decoration: none;" href="cookies.html">Chocolate Cookies</a></h3>
+    <p>Chocolate chip cookies get the upgrade they deserve when baked with Swans Down.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/chin chin.jpeg" alt="Chin Chin">
+     <h3><a style="text-decoration: none;" href="chinchin.html">Chin Chin</a></h3>
+    <p>Crunchy, deep-fried flour dough, mildly sweet and spicy.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/egg roll.jpeg" alt="Egg Roll">
+     <h3><a style="text-decoration: none;" href="eggroll.html">Egg Roll</a></h3>
+    <p>Boiled egg wrapped in dough and deep-fried till golden.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/fish roll.jpeg" alt="Fish Roll">
+     <h3><a style="text-decoration: none;" href="fishroll.html">Fish Roll</a></h3>
+    <p>Flaky pastry filled with spicy, seasoned fish mix.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/buns.jpeg" alt="Buns">
+     <h3><a style="text-decoration: none;" href="buns.html">Buns</a></h3>
+    <p>Soft, deep-fried dough snack, similar to Puff Puff but denser.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/pizza.webp" alt="Mini Pizza">
+     <h3><a style="text-decoration: none;" href="minipizza.html">Mini Pizza</a></h3>
+    <p>Flour-based dough topped with cheese, meat, and vegetables.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+    <img src="images/food3.jpeg" alt="Burger">
+    <h3><a style="text-decoration: none;" href="burger.html">Burger & Fries Combo</a></h3>
+    <p>Juicy beef burger with lettuce, tomato, cheese, and fries on the side.</p>
+    <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+  </div>
+  <div class="food-card">
+  <img src="images/pancake.jpeg" alt="pan cake">
+   <h3><a style="text-decoration: none;" href="pancake.html">Pan Cake</a></h3>
+  <p>you can never go wrong with a delightful classic pan cake sauce with hony</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+  <div class="food-card">
+  <img src="images/croissant.jpeg" alt="Croissant">
+   <h3><a style="text-decoration: none;" href="croissiant.html"> Croissant</a></h3>
+  <p>Flaky, buttery French pastry made from laminated dough.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/empanda.jpeg" alt="Empanada">
+   <h3><a style="text-decoration: none;" href="empandan.html">Empanada</a></h3>
+  <p>Fried or baked pastry filled with meat, cheese, or veggies.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/spring roll.jpeg" alt="Spring Roll">
+   <h3><a style="text-decoration: none;" href="springroll.html">Spring Roll</a></h3>
+  <p>Thin flour wrappers filled with veggies/meat, then fried.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/flat bread.jpeg" alt="Flatbread">
+  <h3><a style="text-decoration: none;" href="flatbread.html">Flat Bread</a></h3>
+  <p>Soft flour bread, great for wraps or dipping sauces.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/crepe.jpeg" alt="Crepe">
+ <h3><a style="text-decoration: none;" href="crepe.html">Crepe</a></h3>
+  <p>Thin pancake-style flour dish with sweet or savory fillings.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/pasta.jpeg" alt="Pastel">
+  <h3><a style="text-decoration: none;" href="pastal.html">Pastel</a></h3>
+  <p>Nigerian fried flour snack filled with meat or veggies.</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+
+</div>
+<div class="food-card">
+  <img src="images/dumpling.jpeg" alt="pan cake">
+  <h3><a style="text-decoration: none;" href="dumplings.html">dumplings</a></h3>
+  <p>you can never go wrong with a delightful classic pan cake sauce with hony</p>
+  <button class="add-to-cart" onclick="addToCart('Meat Pie', 800, 'images/slider1.jpeg')">Add to Cart</button>
+</div>
+<!-- Testimonials Section -->
+<section class="testimonial-section" style="width: 1350px;">
+  <h2>What Our Customers Are Saying</h2>
+  <div class="testimonial-carousel">
+    <div class="testimonial active">
+      "Quick Bite's pastries are mouthwatering! The donuts are my absolute favorite."
+      <div class="testimonial-author">– Fatima, Abuja</div>
+    </div>
+    <div class="testimonial">
+      "The meat pies are always fresh and rich. Highly recommended!"
+      <div class="testimonial-author">– John, Lagos</div>
+    </div>
+    <div class="testimonial">
+      "I keep coming back for the chin chin and sausage rolls. Tastes like home!"
+      <div class="testimonial-author">– Blessing, Enugu</div>
+    </div>
+  </div>
+</section>
+
+  
+
+
+</div>
+  <!-- Footer -->
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-column brand">
+      <p class="brand-text">The space<br />for dalicious<br />flour made dishes®</p>
+      
+    </div>
+
+    <div class="footer-column">
+      <h4>London</h4>
+      <p>+44 20 7998 7571</p>
+      <p>Unit 306, Metropolitan Wharf,<br />70 Wapping Wall, London E1W 3SS</p>
+      <a href="#">SEE ON MAP ↗</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Bite</h4>
+      <p><a href="mailto:buenosaires@weareimpero.com">buenosaires@weareimpero.com</a></p>
+      <p>+54 11 6799 7949</p>
+      <p>Cabildo 1458 1st floor,<br />Buenos Aires</p>
+     
+    </div>
+
+    <div class="footer-column">
+      <p>&copy; 2025 Quick Bite. All Rights Reserved.</p>
+    <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="login.html">Sign in</a></li>
+         <li><a href="cart.html">Cart 🛒</a></li>
+      </ul>
+  </footer>
+  <link href="index.js">
+
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.getElementById('dots-container');
+
+  // Create dots dynamically
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (idx === 0) dot.classList.add('active');
+    dot.setAttribute('onclick', `goToSlide(${idx})`);
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      dots[i].classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+        dots[i].classList.add('active');
+      }
+    });
+    currentSlide = index;
+  }
+
+  function moveSlide(step) {
+    let newIndex = (currentSlide + step + slides.length) % slides.length;
+    showSlide(newIndex);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  // Auto Slide
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+
+
+  function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem("quickbite-cart")) || [];
+    let existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, image, qty: 1 });
+    }
+    localStorage.setItem("quickbite-cart", JSON.stringify(cart));
+    alert(name + " added to cart!");
+  }
+
+  <!-- Testimonial Carousel Script -->
+  let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial-carousel .testimonial');
+
+function showTestimonial(index) {
+  testimonials.forEach((t, i) => {
+    t.classList.remove('active');
+    if (i === index) t.classList.add('active');
+  });
+}
+
+function nextTestimonial() {
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  showTestimonial(currentTestimonial);
+}
+
+setInterval(nextTestimonial, 5000);
+
+</script>
+
+</body>
+</html>

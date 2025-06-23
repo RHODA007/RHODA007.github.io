@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Quick Bite</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cart-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff8f0;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cart-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #d6336c;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .cart-details {
+      flex-grow: 1;
+    }
+    .cart-summary {
+      text-align: right;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .place-order-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      background: #ff4081;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .place-order-btn:hover {
+      background: #e53070;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Quick Bite</h1>
+    <nav>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="login.html">Sign in</a></li>
+        <li><a href="cart.html">Cart 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cart-container">
+  <div class="cart-title">🛒 Your Cart</div>
+  <div id="cart-items"></div>
+  <div class="cart-summary" id="cart-total">Total: ₦0</div>
+  <a id="whatsapp-order" class="place-order-btn" target="_blank">Place Order on WhatsApp</a>
+</main>
+
+ <!-- Footer -->
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-column brand">
+      <p class="brand-text">The space<br />for dalicious<br />flour made dishes®</p>
+      
+    </div>
+
+    <div class="footer-column">
+      <h4>London</h4>
+      <p>+44 20 7998 7571</p>
+      <p>Unit 306, Metropolitan Wharf,<br />70 Wapping Wall, London E1W 3SS</p>
+      <a href="#">SEE ON MAP ↗</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Quick Bite</h4>
+      <p><a href="mailto:buenosaires@weareimpero.com">buenosaires@weareimpero.com</a></p>
+      <p>+54 11 6799 7949</p>
+      <p>Cabildo 1458 1st floor,<br />Buenos Aires</p>
+     
+    </div>
+
+    <div class="footer-column">
+      <p>&copy; 2025 Quick Bite. All Rights Reserved.</p>
+    <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="register.html">Sign up</a></li>
+        <li><a href="login.html">Sign in</a></li>
+         <li><a href="cart.html">Cart 🛒</a></li>
+      </ul>
+  </footer>
+<script>
+  const cartContainer = document.getElementById("cart-items");
+  const totalContainer = document.getElementById("cart-total");
+  const whatsappBtn = document.getElementById("whatsapp-order");
+
+  let cart = JSON.parse(localStorage.getItem("quickbite-cart")) || [];
+
+  function renderCart() {
+    cartContainer.innerHTML = "";
+    let total = 0;
+    let message = "Hello Quick Bite! I'd like to order:\n";
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+      message += `${item.qty} × ${item.name} - ₦${itemTotal}\n`;
+
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-details">
+          <h3>${item.name}</h3>
+          <p>₦${item.price} × ${item.qty}</p>
+          <div class="qty-controls">
+            <button onclick="updateQty(${index}, -1)">−</button>
+            <button onclick="updateQty(${index}, 1)">+</button>
+            <button onclick="removeItem(${index})" class="remove-btn">Remove</button>
+          </div>
+        </div>
+        <div class="cart-price">₦${itemTotal}</div>
+      `;
+      cartContainer.appendChild(div);
+    });
+
+    totalContainer.textContent = `Total: ₦${total}`;
+    message += `\nTotal: ₦${total}`;
+    const phoneNumber = "2348155183456"; //  WhatsApp number
+    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    localStorage.setItem("quickbite-cart", JSON.stringify(cart));
+  }
+
+  function updateQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) {
+      cart.splice(index, 1);
+    }
+    renderCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  renderCart();
+</script>
+
+
+    
+
+</body>
+</html>

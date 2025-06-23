@@ -1,0 +1,474 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f8f5;
+  color: #1a1a1a;
+}
+
+header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  color: #0b0c3f;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0b0c3f;
+  font-weight: bold;
+}
+
+.slider {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.slides img {
+  width: 100%;
+  height: 250px;
+  display: none;
+  object-fit: cover;
+}
+
+.slides img:first-child {
+  display: block;
+}
+
+main {
+  padding: 2em;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 1em;
+}
+
+.food-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.food-card h3 {
+  margin: 0.5em 0;
+}
+
+.food-card p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+footer {
+  background: #0b0c3f;
+  color: #fff;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  gap: 1.2em;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.details-page {
+  padding: 2em;
+}
+
+.large-img {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Updated section only */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em;
+  padding: 1em 0;
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 1em;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover {
+  transform: scale(1.05);
+}
+
+.food-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.food-card h3 {
+  margin: 0.6em 0 0.2em;
+  font-size: 1.1em;
+}
+
+.food-card p {
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Hero Banner Styling */
+.hero-banner {
+  background-image: url('images/hero.jpg'); /* Replace with your hero image */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.hero-btn {
+  background-color: #f76c6c;
+  padding: 0.7em 1.5em;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #d9534f;
+}
+
+/* Image Slider Section */
+.image-slider {
+  padding: 2em 1em;
+  background-color: #fff6f6;
+  text-align: center;
+}
+
+.image-slider h2 {
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  color: #cc4c4c;
+}
+
+.slider-container {
+  display: flex;
+  gap: 1em;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1em;
+}
+
+.slider-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider-container::-webkit-scrollbar-thumb {
+  background: #f76c6c;
+  border-radius: 10px;
+}
+
+.slider-container img {
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.slider-container img:hover {
+  transform: scale(1.05);
+}
+
+/* === Slider Container === */
+.custom-slider {
+  position: relative;
+  max-width: 100%;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === Wrapper for Slides === */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+/* === Individual Slide === */
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+  animation: fadeSlide 1.5s ease;
+}
+
+/* === Slide Image === */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+/* === Caption Text === */
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Navigation Buttons === */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+/* === Dots === */
+.slider-dots {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+}
+
+.slider-dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-dots .dot.active {
+  background-color: #ff4081;
+}
+
+/* === Animation Keyframe === */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .slider-wrapper {
+    height: 250px;
+  }
+  .caption {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    bottom: 15px;
+    left: 20px;
+  }
+}
+.add-to-cart {
+  background-color: #ff4081;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart:hover {
+  background-color: #e03070;
+}
+
+.qty-controls {
+  margin-top: 10px;
+}
+
+.qty-controls button {
+  background: #ff4081;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.qty-controls button:hover {
+  background: #e03070;
+}
+
+.remove-btn {
+  background: #e74c3c;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+.testimonial-section {
+  background-color: #fff8f0;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  font-size: 2rem;
+  color: #b14c2e;
+  margin-bottom: 30px;
+}
+
+.testimonial-carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 160px;
+}
+
+.testimonial {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 100%;
+  font-style: italic;
+  background-color: #fff;
+  padding: 25px;
+  border-left: 5px solid #ff9966;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.testimonial.active {
+  display: block;
+  opacity: 1;
+}
+
+.testimonial-author {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}

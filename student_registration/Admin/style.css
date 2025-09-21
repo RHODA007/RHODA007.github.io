@@ -1,0 +1,152 @@
+/* General page style */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9fb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card (form + table containers) */
+.card {
+  border-radius: 15px !important;
+  border: none !important;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Titles */
+h2 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 30px;
+  padding: 8px 20px;
+  transition: 0.3s;
+}
+
+.btn-success {
+  background: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.btn-warning {
+  background: #ffc107;
+  border: none;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background: #e0a800;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+/* Table */
+.table {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #007bff;
+  color: white;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background: #f2f8ff;
+}
+
+/* Form controls */
+.form-control {
+  border-radius: 10px;
+  box-shadow: none !important;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+}
+
+/* 🌙 Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .card {
+  background: rgba(30, 30, 30, 0.95);
+  color: #f1f1f1;
+}
+
+body.dark-mode h2 {
+  color: #ffffff;
+}
+
+body.dark-mode .table {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .table thead {
+  background: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .form-control {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .form-control:focus {
+  border-color: #66b2ff;
+}
+
+body.dark-mode .btn {
+  color: #ffffff;
+}
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  transition: all 0.5s;
+}
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#toast.success { background: #4CAF50; }
+#toast.error { background: #f44336; }
+
+@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }

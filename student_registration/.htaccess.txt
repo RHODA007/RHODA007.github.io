@@ -1,0 +1,2 @@
+# Set login.php as the default page
+DirectoryIndex login.php
